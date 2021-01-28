@@ -67,8 +67,8 @@
                 <div class="accordion">
                     <input type="checkbox" id="shipment_{{ shipment.package_number }}">
                     <label class="tab-label" for="shipment_{{ shipment.package_number }}">
-                        <p>{{ shipment.order_number }}</p>
-                        <p>{{ shipment.date }}</p>
+                        <p class="order_number">{{ shipment.identifier }}</p>
+                        <p class="order_date">{{ shipment.date_formatted }}</p>
                     </label>
                     <div class="tab-content">
                         <div style="overflow: hidden;">
@@ -191,6 +191,30 @@
 
     #coolrunner_support .accordion .tab-label p {
         margin: 0;
+    }
+
+    #coolrunner_support .accordion .tab-label p.order_number {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 156px;
+    }
+
+    #coolrunner_support .accordion .tab-label p.order_number:hover {
+        max-width: unset;
+        background: #ffffffc4;
+        width: max-content;
+        z-index: 23;
+        position: absolute;
+        backdrop-filter: blur(1px);
+        padding-right: 28px;
+    }
+
+    #coolrunner_support .accordion .tab-label p.order_date {
+        white-space: nowrap;
+        width: 50%;
+        right: -3.5em;
+        position: absolute;
     }
 
     #coolrunner_support .accordion .tab-label::after {
