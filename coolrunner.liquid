@@ -11,7 +11,7 @@
                 </svg>
             </div>
             <p>
-                {{response_data.name}}
+                {{ name }}
             </p>
         </div>
 
@@ -25,7 +25,7 @@
                 </svg>
             </div>
             <p>
-                {{ response_data.address.formatted }}
+                {{ address.formatted }}
             </p>
         </div>
 
@@ -39,7 +39,7 @@
                 </svg>
             </div>
             <p>
-                {{ response_data.email }}
+                {{ email }}
             </p>
         </div>
 
@@ -53,7 +53,7 @@
                 </svg>
             </div>
             <p>
-                {{ response_data.phone }}
+                {{ phone }}
             </p>
         </div>
 
@@ -63,7 +63,7 @@
         <h2>Forsendelser</h2>
         <div class="table" style="display: flex; flex-direction: column;">
             <div class="list">
-                {% for shipment in response_data.shipments %}
+                {% for shipment in shipments %}
                 <div class="accordion">
                     <input type="checkbox" id="shipment_{{ shipment.package_number }}">
                     <label class="tab-label" for="shipment_{{ shipment.package_number }}">
